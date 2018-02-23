@@ -1,0 +1,28 @@
+-----------Настройка-------------
+
+//Должна быть установлена Java 7
+
+1) Извлекаем из архива папку FMDApktool в домашнюю папку
+
+2) Вводим (по порядку)
+
+sudo apt-get install libnotify-bin sox
+sudo apt-get install p7zip-rar p7zip-full
+ 
+cd FMDApktool 
+
+PATH=${PATH}:~/work/FMDApktool/scripts
+export PATH
+
+chmod 755 tool
+
+3)Далее набираем
+chmod 755 пробел и выделяем все файлы из папки scripts  и переносим в окно терминала. жмем Enter
+
+4)Далее
+./tool
+
+Инструкция по пользованию в разделе "информация"
+
+
+

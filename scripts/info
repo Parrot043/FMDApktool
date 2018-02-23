@@ -1,0 +1,51 @@
+#! /bin/bash
+# Info FMD Apktool
+e="\x1b[";c=$e"39;49;00m";y=$e"93;01m";cy=$e"96;01m";r=$e"1;91m";g=$e"92;01m";m=$e"95;01m";
+help ()
+{
+clear
+echo -e "
+   *************************$cy Помощь в пользовании$c ****************************
+
+   Обработка на примере SystemUI.apk
+   Кладем framework-res.apk и SystemUI.apk в папку resources,
+   В утилите выбираем 9 пункт и выбираем framework-res.apk, 
+   Далее в утилите выбираем 1 пункт и выбираем SystemUI.apk,
+   Декомпилированный SystemUI будет лежать в папке decompile,
+   Далее выбираем пункт 2 и выбираем папку SystemUI,
+   После компиляции , готовый apk будет лежать в папке output,
+   под названием new_apk_signed.apk,переименовываем его обратно в SystemUI.apk
+   Для подписи отдельного apk кладем его в папку signing и выбираем пункт 4 
+   Для JAR все аналогично.
+   Для оптимизации apk кладем его в папку output и выбираем пункт 10,
+   оптимизированный apk будет в той же папке под названием 
+   optimizing_$y name_apk$c
+
+";
+printf %s "   Нажмите Enter, чтобы вернуться ";
+read helps;
+if [ "$helps" == "" ];
+    then
+      clear;
+      info;
+fi;
+}
+info ()
+{
+clear
+echo -e "
+   *************************   $cy   Информация $c     ****************************
+   Разработчик: FMD Team                                    $cy vk.com/club_fmd_p$c 
+   Версия FMD Apktool: 0.5 Stable                                    shepik997
+   Версия Apktool: 2.0.3                             $r 1 - Помощь в пользовании$c            
+";
+printf "%s" "   Нажмите Enter, чтобы вернуться: ";
+read helpi;
+case "$helpi" in
+1)  help ;;
+2)  exit 1 ;;
+esac
+}
+clear
+info
+exit 0
